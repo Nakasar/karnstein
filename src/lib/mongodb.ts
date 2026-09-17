@@ -9,12 +9,12 @@ import { MongoClient, type Db } from "mongodb";
  * sur `globalThis` pour survivre au hot-reload de Next.js.
  */
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.DATABASE_URL;
 const dbName = process.env.MONGODB_DB ?? "karnstein";
 
 if (!uri && process.env.NODE_ENV === "production") {
   console.warn(
-    "[karnstein] MONGODB_URI n'est pas défini : l'authentification échouera à l'exécution.",
+    "[karnstein] DATABASE_URL n'est pas défini : l'authentification échouera à l'exécution.",
   );
 }
 

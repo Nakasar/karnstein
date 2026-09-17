@@ -31,7 +31,7 @@ Le site est alors servi sur http://localhost:3000.
 
 | Variable | Rôle |
 | --- | --- |
-| `MONGODB_URI` | Chaîne de connexion MongoDB. |
+| `DATABASE_URL` | Chaîne de connexion MongoDB. |
 | `MONGODB_DB` | Nom de la base (par défaut `karnstein`). |
 | `MONGODB_TRANSACTIONS` | `true` seulement si l'instance est un *replica set*. |
 | `BETTER_AUTH_SECRET` | Secret de signature des sessions (`openssl rand -base64 32`). |
