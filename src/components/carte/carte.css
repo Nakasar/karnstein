@@ -1,0 +1,120 @@
+/*
+ * Habillage Leaflet aux couleurs de la maison.
+ * Importé juste après `leaflet/dist/leaflet.css` pour garantir l'ordre en
+ * cascade : ces règles doivent gagner sur la feuille de style d'origine.
+ */
+
+.leaflet-container {
+  background: #080506;
+  font-family: var(--font-body), Georgia, serif;
+  outline: none;
+}
+
+.leaflet-container a {
+  color: var(--gold);
+}
+
+/* Contrôles de zoom ------------------------------------------------- */
+.leaflet-bar,
+.leaflet-bar a {
+  border-color: oklch(0.42 0.06 28 / 45%);
+}
+
+.leaflet-bar a,
+.leaflet-bar a:hover {
+  background-color: oklch(0.14 0.016 22 / 92%);
+  color: var(--bone);
+}
+
+.leaflet-bar a:hover {
+  background-color: oklch(0.24 0.06 24 / 95%);
+  color: #fff;
+}
+
+.leaflet-bar a.leaflet-disabled {
+  background-color: oklch(0.12 0.014 20 / 85%);
+  color: oklch(0.45 0.02 40);
+}
+
+/* Infobulles et bulles d'information -------------------------------- */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: oklch(0.14 0.018 22 / 97%);
+  color: var(--bone);
+  border: 1px solid oklch(0.42 0.06 28 / 55%);
+  border-radius: 2px;
+  box-shadow: 0 18px 48px -20px rgb(0 0 0 / 95%);
+}
+
+.leaflet-popup-content {
+  margin: 0.85rem 1rem;
+  min-width: 15rem;
+  line-height: 1.5;
+}
+
+.leaflet-popup-close-button {
+  color: var(--ash) !important;
+}
+
+.leaflet-tooltip {
+  background: oklch(0.12 0.016 22 / 95%);
+  border: 1px solid oklch(0.42 0.06 28 / 50%);
+  border-radius: 2px;
+  color: var(--bone);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: none;
+  padding: 0.2rem 0.5rem;
+}
+
+.leaflet-tooltip-top::before {
+  border-top-color: oklch(0.42 0.06 28 / 50%);
+}
+
+/* Marqueurs ---------------------------------------------------------- */
+.carte-pin {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.carte-pin__ecu {
+  width: 17px;
+  height: 17px;
+  rotate: 45deg;
+  background: radial-gradient(circle at 30% 30%, #2a1418, #0b0607 70%);
+  border: 1.6px solid var(--pin, #a9202a);
+  box-shadow:
+    0 0 0 3px rgb(8 5 6 / 70%),
+    0 0 12px -2px var(--pin, #a9202a);
+  transition:
+    scale 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.carte-pin__coeur {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: var(--pin, #a9202a);
+}
+
+.carte-pin:hover .carte-pin__ecu {
+  scale: 1.18;
+}
+
+.carte-pin.is-active .carte-pin__ecu {
+  scale: 1.35;
+  box-shadow:
+    0 0 0 3px rgb(8 5 6 / 70%),
+    0 0 20px 2px var(--pin, #a9202a);
+}
+
+.carte-pin.is-active .carte-pin__coeur {
+  background: #fff;
+}
